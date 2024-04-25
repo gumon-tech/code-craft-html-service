@@ -22,20 +22,6 @@ export class UserDocument extends Document {
     trim: true,
   })
   password: string;
-
-  @Prop({
-    type: String,
-    trim: true,
-    default: '',
-  })
-  firstName: string;
-
-  @Prop({
-    type: String,
-    trim: true,
-    default: '',
-  })
-  lastName: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserDocument);
