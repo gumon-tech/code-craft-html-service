@@ -1,0 +1,22 @@
+version: "1"
+networks:
+  api:
+    driver: bridge
+services:
+  minio:
+    image: quay.io/minio/minio:latest
+    restart: "no"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    env_file:
+      - .env.minio.docker
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio_data:/minio/data
+    networks:
+      - api
+
+volumes:
+  minio_data:
+    driver: local
