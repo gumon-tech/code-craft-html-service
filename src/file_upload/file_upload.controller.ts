@@ -6,7 +6,6 @@ import {
   UseInterceptors,
   UploadedFile,
   Res,
-  Body,
 } from '@nestjs/common';
 import { FileUploadService } from './file_upload.service';
 import { FileInterceptor } from '@nestjs/platform-express';
