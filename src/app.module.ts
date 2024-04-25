@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { FileUploadModule } from './file_upload/file_upload.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { UsersModule } from './users/users.module';
     FileUploadModule,
     DatabaseModule,
     UsersModule,
+    ProfileModule,
   ],
   controllers: [],
   providers: [],
