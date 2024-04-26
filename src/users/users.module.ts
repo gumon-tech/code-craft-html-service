@@ -16,7 +16,7 @@ import { jwtConstants } from 'src/constant/jwtConstants';
     JwtModule.register({
       global: true,
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '12h' },
+      signOptions: {},
     }),
     MongooseModule.forFeature(
       [
