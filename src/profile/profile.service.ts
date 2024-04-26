@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProfileDto } from './dto/create-profile.dto';
-import { UpdateProfileDto } from './dto/update-profile.dto';
 import { CombinedPluginModel } from 'src/database/database.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { UserDocument } from 'src/database/schemas/user.schema';

@@ -81,6 +81,7 @@ export class UsersService {
     const accessToken = await this.jwtService.signAsync({
       username: user.username,
       sub: user.id,
+      userId: user.id,
       // secret: this.jwtSecretKey || '123',
     });
 

@@ -9,11 +9,13 @@ import {
 } from 'src/database/schemas/profile.schema';
 import { ConnectionName } from 'src/database/database.module';
 import { JwtModule } from '@nestjs/jwt';
+import { jwtConstants } from 'src/constant/jwtConstants';
 
 @Module({
   imports: [
     JwtModule.register({
-      secret: 'RWscfEkQ4JUuSkMN79ttSul5UFnWy293X7gEsZvMDp',
+      global: true,
+      secret: jwtConstants.secret,
       signOptions: { expiresIn: '12h' },
     }),
     MongooseModule.forFeature(
