@@ -20,6 +20,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(appPort);
+  console.log('test');
 
   console.log(`\n\t🚀 Service API ready at http://localhost:${appPort}/ \n\t`);
   console.log(
