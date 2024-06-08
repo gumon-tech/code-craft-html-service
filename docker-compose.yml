@@ -4,7 +4,7 @@ networks:
     driver: bridge
 services:
   minio:
-    image: quay.io/minio/minio:latest
+    image: minio/minio:latest
     restart: "no"
     ports:
       - "9000:9000"
@@ -17,6 +17,32 @@ services:
     networks:
       - api
 
+  code-craft-html-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code-craft-html-service
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    networks:
+      - api
+    env_file:
+      - .env.docker
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - api
+
 volumes:
   minio_data:
+    driver: local
+  mongodb_data:
     driver: local
