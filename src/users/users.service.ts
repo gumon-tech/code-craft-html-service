@@ -96,12 +96,9 @@ export class UsersService {
       // secret: this.jwtSecretKey || '123',
     });
 
-    console.log('user', user);
-
     const profile = await this.profileDocModel.findOne({
       userId: user.id,
     });
-    console.log('profile', profile);
 
     // ส่ง Token กลับไปยังผู้ใช้
     return {
