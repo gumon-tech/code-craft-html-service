@@ -25,8 +25,16 @@ export class UsersService {
   ) {}
 
   async register(registerUserDto: RegisterUserDto) {
-    const { username, password, confirmPassword, firstName, lastName } =
-      registerUserDto;
+    const {
+      username,
+      password,
+      confirmPassword,
+      firstName,
+      lastName,
+      bio,
+      email,
+      nickname,
+    } = registerUserDto;
 
     // แฮชรหัสผ่าน
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -52,6 +60,9 @@ export class UsersService {
       userId: user._id,
       firstName: firstName,
       lastName: lastName,
+      bio: bio,
+      email: email,
+      nickname: nickname,
     });
 
     return {
@@ -85,8 +96,18 @@ export class UsersService {
       // secret: this.jwtSecretKey || '123',
     });
 
+    console.log('user', user);
+
+    const profile = await this.profileDocModel.findOne({
+      userId: user.id,
+    });
+    console.log('profile', profile);
+
     // ส่ง Token กลับไปยังผู้ใช้
-    return { access_token: accessToken };
+    return {
+      profile: profile,
+      access_token: accessToken,
+    };
   }
 
   async changePassword(data: ChangePasswordDto) {

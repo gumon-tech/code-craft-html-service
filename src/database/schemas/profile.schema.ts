@@ -34,21 +34,20 @@ export class ProfileDocument extends Document {
     trim: true,
     default: '',
   })
-  tittle: string;
+  nickname: string;
 
   @Prop({
     type: String,
     trim: true,
     default: '',
   })
-  aboutMe: string;
+  email: string;
 
   @Prop({
-    type: String,
-    trim: true,
-    default: '',
+    type: Object,
+    default: {},
   })
-  profileImageURL: string;
+  bio: object;
 }
 
 export const ProfileSchema = SchemaFactory.createForClass(ProfileDocument);

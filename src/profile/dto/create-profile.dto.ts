@@ -25,18 +25,93 @@ export class CreateProfileDto {
   lastName: string;
 
   @ApiProperty({
-    description: 'tittle',
-    example: 'tittle',
+    description: 'nickname',
+    example: 'โอ',
     required: false,
   })
-  @IsString()
-  tittle: string;
+  nickname: string = '';
 
   @ApiProperty({
-    description: 'aboutMe',
-    example: 'aboutMe',
+    description: 'email',
+    example: 'email',
     required: false,
   })
-  @IsString()
-  aboutMe: string;
+  email: string = '';
+
+  @ApiProperty({
+    description: 'bio',
+    example: {
+      about:
+        'Komphet Meesab, known as Kom, is a seasoned Technology Consultant with extensive experience in providing innovative tech solutions and strategic guidance to businesses. With a strong background in software development and systems integration, Kom excels at helping organizations navigate the complexities of modern technology landscapes.',
+      skills: [
+        'Software Development',
+        'Systems Integration',
+        'Cloud Computing',
+        'Cybersecurity',
+        'Enterprise Software',
+        'Analytical Skills',
+        'Problem-solving',
+      ],
+      experience: [
+        {
+          company: 'Tech Innovators Inc.',
+          role: 'Senior Technology Consultant',
+          duration: '2015 - 2017',
+          projects: [
+            {
+              name: 'Cloud Migration Project',
+              description:
+                'Led a team of 10 engineers in migrating on-premises infrastructure to AWS, resulting in a 30% reduction in operational costs.',
+            },
+            {
+              name: 'Enterprise CRM Implementation',
+              description:
+                'Managed the implementation of a CRM system for a Fortune 500 company, enhancing customer engagement and increasing sales by 15%.',
+            },
+          ],
+        },
+        {
+          company: 'Global Solutions Ltd.',
+          role: 'Lead Systems Integrator',
+          duration: '2017 - 2019',
+          projects: [
+            {
+              name: 'IoT Integration',
+              description:
+                'Integrated IoT solutions for smart manufacturing processes, improving efficiency by 25% and reducing downtime by 40%.',
+            },
+            {
+              name: 'Cybersecurity Enhancement',
+              description:
+                'Developed and deployed a comprehensive cybersecurity framework for a financial institution, mitigating risks and ensuring compliance with regulatory standards.',
+            },
+          ],
+        },
+        {
+          company: 'Innovative Tech Services',
+          role: 'Technology Strategist',
+          duration: '2019 - 2021',
+          projects: [
+            {
+              name: 'Digital Transformation Initiative',
+              description:
+                'Orchestrated the digital transformation of a traditional retail business, implementing e-commerce solutions that boosted online sales by 50%.',
+            },
+            {
+              name: 'Big Data Analytics',
+              description:
+                'Implemented big data analytics platforms for a healthcare provider, enabling predictive analytics and improving patient outcomes.',
+            },
+          ],
+        },
+      ],
+      contact_information: {
+        email: 'kom@example.com',
+        phone: '+123-456-7890',
+        linkedin: 'https://www.linkedin.com/in/komphet-meesab',
+      },
+    },
+    required: false,
+  })
+  bio: object = {};
 }
