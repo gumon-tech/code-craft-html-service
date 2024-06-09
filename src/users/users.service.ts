@@ -34,6 +34,7 @@ export class UsersService {
       bio,
       email,
       nickname,
+      image,
     } = registerUserDto;
 
     // แฮชรหัสผ่าน
@@ -63,6 +64,7 @@ export class UsersService {
       bio: bio,
       email: email,
       nickname: nickname,
+      image: image,
     });
 
     return {

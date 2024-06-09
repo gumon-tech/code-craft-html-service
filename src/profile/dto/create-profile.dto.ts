@@ -3,6 +3,14 @@ import { IsNotEmpty, IsString, MinLength, MaxLength } from 'class-validator';
 
 export class CreateProfileDto {
   @ApiProperty({
+    description: 'image',
+    example: '/products/06.jpg',
+    required: false,
+    default: '',
+  })
+  image: string;
+
+  @ApiProperty({
     description: 'ชื่อ',
     example: 'ปณิจชัย',
     required: true,

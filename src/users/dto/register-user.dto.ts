@@ -3,6 +3,14 @@ import { IsNotEmpty, IsString, MinLength, MaxLength } from 'class-validator';
 
 export class RegisterUserDto {
   @ApiProperty({
+    description: 'image',
+    example: '/products/06.jpg',
+    required: false,
+    default: '',
+  })
+  image: string;
+
+  @ApiProperty({
     description: 'username',
     example: 'username',
     required: true,

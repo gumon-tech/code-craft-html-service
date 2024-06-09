@@ -20,6 +20,13 @@ export class ProfileDocument extends Document {
     trim: true,
     default: '',
   })
+  image: string;
+
+  @Prop({
+    type: String,
+    trim: true,
+    default: '',
+  })
   firstName: string;
 
   @Prop({
